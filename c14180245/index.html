@@ -17,7 +17,10 @@ Welly Susanto
             <label>Tanggal 1:</label>
             <input type="text"  name="tanggal"  id="date1" class="form-control datepicker"  required/>
         </div>
-       
+        <div class="form-group">
+            <label>Tanggal 2:</label>
+            <input type="text"  name="tanggal"  id="date2" class="form-control datepicker"  required/>
+        </div>
         <div class="form-group">
             <button id="submit" class="btn btn-primary" type="submit">Calculate</button>
         </div>
@@ -31,8 +34,8 @@ Welly Susanto
 
             $("#submit").click(function(){
                 var date1 = $("#date1").datepicker('getDate');
-                var today = new Date();
-                var dayDiff = Math.ceil((date1 - today) / (1000 * 60 * 60 * 24));
+                var date2 = $("#date2").datepicker('getDate');
+                var dayDiff = Math.ceil((date1 - date2) / (1000 * 60 * 60 * 24));
                 alert(dayDiff + " hari");
             });
         });
